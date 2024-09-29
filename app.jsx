@@ -3,6 +3,7 @@ const app = express();
 const port = 5500;
 
 //This is a comment added by Mesgana
+//Additional code per NAti's request
 
 // Database connection
 const dbConnection = require("./db/dbConfig.jsx");
