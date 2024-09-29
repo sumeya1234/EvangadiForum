@@ -2,7 +2,8 @@ const express = require("express");
 const app = express();
 const port = 5500;
 
-
+//This is a comment added by Mesgana
+//Additional code per NAti's request
 
 // Database connection
 const dbConnection = require("./db/dbConfig.jsx");
@@ -14,9 +15,8 @@ const userRoutes = require("./routes/userRoute.jsx"); // Include .jsx here
 app.use(express.json()); // Add this line
 
 //user routes middleware
-app.use("/api/users",userRoutes);
- console.log("User routes registered at /api/users");
-
+app.use("/api/users", userRoutes);
+console.log("User routes registered at /api/users");
 
 // Questions routes middleware
 const questionRoutes = require("./routes/questionRoute.jsx");
