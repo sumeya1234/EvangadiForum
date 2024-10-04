@@ -1,3 +1,5 @@
+
+
 const {StatusCodes} = require("http-status-codes");
 const jwt = require("jsonwebtoken");
 async function authMiddleware(req, res, next){
@@ -7,8 +9,8 @@ async function authMiddleware(req, res, next){
         return res.status(StatusCodes.UNAUTHORIZED).json({ error: "Authentication invalid"});
     }
     const token = authHeader.split(" ")[1]
-    // console.log(authHeader)
-    // console.log(token)
+    console.log(authHeader)
+    console.log(token)
     try {
         const {username, userid} = jwt.verify(token, "secret");
         req.user = { username, userid}

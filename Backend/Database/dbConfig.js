@@ -10,15 +10,15 @@ const dbConnection = mysql2.createPool({
 });
 
 // Test the connection
-async function testConnection() {
-  try {
-    const [result] = await dbConnection.query("SELECT 'test'");
-    console.log(result);
-  } catch (err) {
-    console.log(err.message);
-  }
-}
+// async function testConnection() {
+//   try {
+//     const [result] = await dbConnection.query("SELECT 'test'");
+//     console.log(result);
+//   } catch (err) {
+//     console.log(err.message);
+//   }
+// }
 
-testConnection();
+// testConnection();
 
 module.exports = dbConnection; // Ensure you export the connection pool
