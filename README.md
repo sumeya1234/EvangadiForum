@@ -5,5 +5,3 @@ Hello and welcome to the Evangadi Forum, a Q&A platform designed and developed b
 #Project Overview
 
 Evangadi Forum is a web-based application built using React Js, Node Js, and SQL. This platform aims to provide a seamless and intuitive experience for users to ask and answer
-
-Testing main here !
