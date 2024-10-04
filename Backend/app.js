@@ -1,39 +1,33 @@
-// Import required modules
 const express = require("express");
-const mysql2 = require("mysql2");
-const dbConnection = require("./Database/dbConfig.js");
-
-// Create Express app instance
 const app = express();
-const PORT = 5500;
+const port = 5500;
+const dbConnection = require("./Database/dbConfig");  // DB connection
 
-// Middleware to parse JSON requests
+
+// User routes middleware file
+const userRoutes = require("./Route/userRoute");
+const questionRoutes = require("./Route/questionRoute");
+const answerRoutes = require("./Route/answerRoute");
+// JSON middleware to extract json data
 app.use(express.json());
 
-// Route middleware files
-const userRoutes = require("./Route/useRoute.js");
-const answerRoutes = require("./Route/answerRoute.js");
-const questionRoutes = require("./Route/questionRoute.js");
-
-// Mount route middlewares
+// User route middleware
 app.use("/api/users", userRoutes);
+
+// Questions route middleware
+app.use("/api/question", questionRoutes)
+
+// Answers route middleware
 app.use("/api/answer", answerRoutes);
-app.use("/api", questionRoutes);
 
-// Start server and establish database connection
-async function start() {
-  try {
-    // Test database connection
-    const result = await dbConnection.execute("SELECT 'test'");
-    console.log("Database connection established");
-
-    // Start server
-    app.listen(PORT, () => {
-      console.log(`Listening on port ${PORT}`);
-    });
-  } catch (error) {
-    console.error(error.message);
-  }
+async function start(){
+    try {
+        const result = dbConnection.execute("select 'test' ");
+        await app.listen(port)
+        console.log("Database connection established")
+        console.log(`listening on ${port}`)
+    } catch (error) {
+        console.log(err)
+    }
 }
-
-start();
+start()
