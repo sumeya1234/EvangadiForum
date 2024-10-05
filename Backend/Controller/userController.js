@@ -60,7 +60,7 @@ async function login(req,res){
         // Generating token
         const username = user[0].username;
         const userid = user[0].userid;
-        const token = jwt.sign({ username , userid },'secret', { expiresIn: "3d" });
+        const token = jwt.sign({ username , userid },'secret', { expiresIn: "60d" });
             return res.status(StatusCodes.OK).json({ msg : "Logged in successfully", token : token });
     } catch (error) {
         console.log(error.message);
