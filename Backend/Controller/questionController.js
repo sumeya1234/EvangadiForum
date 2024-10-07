@@ -1,6 +1,8 @@
 const dbConnection = require("../Database/dbConfig");
 const { StatusCodes } = require("http-status-codes");
-const { v4 : uuidv4} = require("uuid");  // Universally unique identifier
+const { v4 : uuidv4} = require("uuid"); // Universally unique identifier
+
+
 async function getAllQuestions(req,res){
     try{
         const [questions] = await dbConnection.query("SELECT * FROM questions");
