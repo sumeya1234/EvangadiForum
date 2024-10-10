@@ -1,0 +1,51 @@
+.questionFormContainer {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-bottom: 130px;
+  }
+  
+  .questionFormHeader {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .errorMessage {
+    color: red;
+    margin-bottom: 10px;
+  }
+  
+  .formGroup {
+    margin-bottom: 20px;
+  }
+  
+  .formGroup label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .formGroup input[type="text"],
+  .formGroup textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .formGroup textarea {
+    height: 150px;
+    resize: vertical;
+  }
+  
+  .submitButton {
+    padding: 10px 20px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .submitButton:hover {
+    background-color: #357ab8;
+  }
