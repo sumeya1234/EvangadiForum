@@ -1,0 +1,112 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    gap: 0;
+    padding: 45px;
+    margin-bottom: 35px;
+    box-sizing: border-box;
+  }
+  
+  .signupBox {
+    margin-top: 100px;
+    margin-left: 55px;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 610px;
+    height: 450px;
+  }
+  
+  .aboutBox {
+    margin-top: 100px;
+    width: 610px;
+    height: 450px;
+    box-shadow: none;
+    padding: 20px 30px;
+  }
+  
+  h2, h3 {
+    margin-top: 0;
+  }
+  
+  .signupForm {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .signupForm input {
+    width: 100%;
+    height: 55px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 15px; /* Consistent spacing */
+  }
+  
+  .signupForm button {
+    background-color: #0056b3; /* Bootstrap primary color */
+    height: 55px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 30px;
+  }
+  
+  .signupForm button:hover {
+    background-color: #007bff; /* Hover color */
+  }
+  
+  .errorMessage {
+    color: red; /* Error message color */
+    margin-bottom: 15px;
+  }
+  
+  .loginLink {
+    margin-top: 10px;
+    font-size: 14px; /* Smaller text for login link */
+  }
+  
+  .loginLink span {
+    color: #fb8402; /* Highlight color */
+    cursor: pointer;
+  }
+  
+  .loginLink span:hover {
+    text-decoration: underline; /* Underline on hover */
+  }
+  
+  .about {
+    color: #fb8402; /* About section color */
+  }
+  
+  .evangadiText {
+    color: rgb(123, 34, 0);
+    font-weight: 900;
+    font-size: 34px; /* Emphasis for brand name */
+  }
+  
+  /* Additional button styles */
+  
+    .createAccountButton {
+      background-color: #fb8402;
+      color: white;
+      padding: 10px;
+      border-radius: 4px;
+      text-align: center;
+      text-decoration: none;
+    }
+  
+  
+  .createAccountButton:hover {
+    background-color: #e68a00; /* Darker shade on hover */
+  }
+  

@@ -1,8 +1,6 @@
 const dbConnection = require("../Database/dbConfig");
 const { StatusCodes } = require("http-status-codes");
-const { v4 : uuidv4} = require("uuid"); // Universally unique identifier
-
-
+const { v4 : uuidv4} = require("uuid");  // Universally unique identifier
 async function getAllQuestions(req,res){
     try{
         const [questions] = await dbConnection.query("SELECT * FROM questions");
@@ -21,8 +19,8 @@ async function getAllQuestions(req,res){
 async function getSingleQuestion(req, res) {
     const { question_id } = req.params;
     try{
-        // const [singleQuestion] = await dbConnection.query("SELECT * FROM questions WHERE questionid =?", [question_id]);
-        const [singleQuestion] = await dbConnection.query("SELECT * FROM questions WHERE id =?", [question_id]);
+        const [singleQuestion] = await dbConnection.query("SELECT * FROM questions WHERE questionid =?", [question_id]);
+        //const [singleQuestion] = await dbConnection.query("SELECT * FROM questions WHERE id =?", [question_id]);
         if(singleQuestion.length == 0){
             return res.status(StatusCodes.NOT_FOUND).json({ msg : "The requested question could not be found."})
         }

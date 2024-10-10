@@ -1,0 +1,120 @@
+.centered_container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+  gap: 0;
+  padding: 45px;
+  margin-bottom: 35px;
+  box-sizing: border-box;
+}
+
+.login_box {
+  margin-top: 100px;
+  margin-left: 55px;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  width: 610px;
+  height: 450px;
+}
+
+.about_box {
+  margin-top: 100px;
+  width: 610px;
+  height: 450px;
+  box-shadow: none;
+  padding: 20px 30px;
+}
+
+.about {
+  color: #fb8402;
+}
+
+.login_box h2,
+.about_box h3 {
+  margin-top: 0;
+}
+
+.formGroup {
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.input {
+  width: 100%;
+  height: 55px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.loginButton {
+  background-color: #0056b3;
+  margin-top: 30px;
+  height: 55px;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.loginButton:hover {
+  background-color: #007bff;
+}
+
+.forgotPasswordLink {
+  padding-left: 400px;
+  color: #fb8402;
+}
+
+.register_link {
+  margin-bottom: 35px;
+  margin-top: 10px;
+}
+
+.register_link,
+.forgotPasswordLink,
+.createAccountButton {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+.createAccountButton {
+  background-color: #fb8402;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.createAccountButton:hover {
+  background-color: #fb8402;
+}
+
+.black-text {
+  color: #333;
+}
+
+.highlightText {
+  color: #fb8402;
+  font-weight: bold;
+}
+
+.evangadi_text {
+  color: rgb(123, 34, 0);
+  font-weight: 900;
+  font-size: 34px;
+}
+.errorMessage {
+  color: red;
+  margin-bottom: 10px;
+}
