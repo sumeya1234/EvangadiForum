@@ -1,73 +1,84 @@
 import { useContext, useEffect, useState } from "react";
-import { AppState } from "../../App";
+import { AppState } from "../../App"; // Importing AppState context to access user data
 import { Link } from "react-router-dom";
 import axios from "../../axiosConfig";
 import classes from "./Home.module.css";
-//import PersonIcon from '@mui/icons-material/Person';
 import { CgProfile } from "react-icons/cg";
-function Home() {
-  const { user } = useContext(AppState);
-  const [questions, setQuestions] = useState([]);
-  const [loading, setLoading] = useState(true); // State to track loading
-  const [error, setError] = useState(null); // State for error handling
+import { MdArrowForwardIos } from "react-icons/md";
+import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
+import { FaUserCircle } from "react-icons/fa";
 
+
+function Home() {
+  //Accessing user state from context
+  const { user } = useContext(AppState);
+
+  // state variable for questions,loading status, and error handling
+  const [questions, setQuestions] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  // Effect to fetch questions from the server when the component mounts
   useEffect(() => {
     const fetchQuestions = async () => {
-      setLoading(true); // Set loading to true when starting to fetch
-      setError(null); // Reset any previous errors
+      setLoading(true); // Set loading to true before fetching
+      setError(null); // Reset error state
 
-      //  const questionList =
       try {
+        // Fetching questions from the API
         const response = await axios.get(`/question`);
-        console.log(response.data)
-        setQuestions(response.data.questions);
+        setQuestions(response.data.questions); // Storing fetched questions in state
+        console.log(questions)
       } catch (error) {
         console.error("Error fetching questions", error);
-        setError("Failed to load questions. Please try again later."); // Set error message
+        setError("Failed to load questions. Please try again later.");
       } finally {
-        setLoading(false); // Set loading to false after fetching
+        setLoading(false); // Setting loading to false after fetching
       }
     };
 
-    fetchQuestions();
-  }, []);
+    fetchQuestions(); // call the fetch function
+  }, []); // Empty dependency array means this runs once on mount
 
   return (
     <div className={classes.centeredContainer}>
       <div className={classes.header}>
-        {/* {
-          // if user logged hi user else hide the h1 tag
-          user?  (  <h1>Welcome, {user.username}</h1>) : ""
-        } */}
-  {user && <h1>Welcome back, {user.username}!</h1>}
-        <Link to="/ask-question">
-          <button className={classes.askQuestionBtn}>
-            Ask Question
-          </button>
+      <Link to={user ? "/ask-question" : "/login"}>
+          <button className={classes.askQuestionBtn}>Ask Question</button>
         </Link>
+        {user && <h5 >Welcome : <span style={{color:"#fb8402"}}>{user.username}</span> </h5>}
+        
       </div>
-          
+      <form class="form-inline my-2 my-lg-0" >
+      <input style={{width:"700px"}} class="form-control mr-sm-2" type="search" placeholder="Search question" aria-label="Search"/>
+    
+    </form>
       <div className={classes.userQuestions}>
-        <h2>Your Questions</h2>
-        {loading && <p>Loading questions...</p>} {/* Display loading text */}
-        {error && <p style={{ color: "red" }}>{error}</p>} {/* Display error message */}
-        {questions.length === 0 && !loading && ( // Only show this if not loading
-          <p>You haven't asked any questions yet.</p>
-        )}
+      
+        {loading && <p>Loading questions...</p>}
+        {error && <p style={{ color: "red" }}>{error}</p>}
         {questions?.map((question) => (
-          <div key={question.id} className={classes.questionItem}>
-            <CgProfile size={50}/>
-            <div className={classes.questionContent}>
-              <Link to={`/question/${question.questionid}`}>
-                <h3>{question.title}</h3>
-              </Link>
-              {/* <p>{question.description}</p> */}
+          <div key={question.questionid} className={classes.questionItem}>
+            <div>
+            <FaUserCircle size={60} />
+         
+            <p>{question.username}</p>
+        
             </div>
+           
+
+
+            <Link
+              to={`/question/${question.questionid}`}
+              className={classes.questionContent}
+            >
+              <p>{question.title}</p>
+              <MdArrowForwardIos size={40} color="#000" />
+            </Link>
           </div>
         ))}
       </div>
     </div>
-   
   );
 }
 

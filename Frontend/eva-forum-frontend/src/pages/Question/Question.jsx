@@ -1,18 +1,18 @@
-import { useParams } from 'react-router-dom'; 
-import { useEffect, useState,useRef } from 'react';
+import { useParams, useNavigate } from 'react-router-dom'; 
+import { useEffect, useState, useRef, useContext } from 'react';
 import axios from '../../axiosConfig';
 import { FaCircleArrowRight } from "react-icons/fa6";
 import styles from './Question.module.css';
-import {StatusCodes} from 'http-status-codes'
+import { AppState } from '../../App'; // Import user state
 
 function Question() {
+  const { user } = useContext(AppState); // Get the user state
   const { question_id } = useParams();
+  const navigate = useNavigate(); // To handle redirection
   const [question, setQuestion] = useState(null);
   const [answers, setAnswers] = useState([]);
-  const [submitted, setSubmitted] = useState(false);
-
-  // const [newAnswer, setNewAnswer] = useState('');
   const answerDom = useRef(null);
+
   useEffect(() => {
     const fetchQuestionAndAnswers = async () => {
       try {
@@ -33,29 +33,22 @@ function Question() {
     e.preventDefault();
     const answerValue = answerDom.current.value;
 
+    if (!answerValue) return;
 
-    if (!answerValue) {
-      setError("Please fill out the response.");
+    if (!user) {
+      alert("Please log in to submit an answer.");
+      navigate("/login");
       return;
     }
 
     try {
-       
-     const response =  await axios.post('/answer', { questionid: question_id, answer: answerValue }); // using params identify the current questionid (db) or question_id(url) and insert into answer table
-     if (response.status === StatusCodes.CREATED) {
-      console.log('Response from backend:', response.data.msg);
+      await axios.post('/answer', { questionid: question_id, answer: answerValue }, {
+        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
+      });
 
-      answerDom.current.value= ' ';
-    } else {
-      console.error('Unexpected response:', response);
-      }
-      // setNewAnswer('');
+      answerDom.current.value = '';
       const updatedAnswers = await axios.get(`/answer/${question_id}`);
       setAnswers(updatedAnswers.data.answers);
-
-     setSubmitted(true); // setSubmitted status to true , to clear response box
-      console.log(submitted)
-  
     } catch (error) {
       console.error('Error posting answer:', error);
     }
@@ -66,7 +59,6 @@ function Question() {
       <h1 className={styles.questionTitle}>QUESTION</h1>
        
       <div className={styles.questionDetail}>
-        
         {question ? (
           <>
             <p><FaCircleArrowRight size={20} /> {question.title}</p>
@@ -94,20 +86,14 @@ function Question() {
       <div className={styles.answerForm}>
         <h3>Your Answer</h3>
         <form onSubmit={handleAnswerSubmit}>
-          {/* Submitted = true  && */}
           <textarea
             className={styles.answerTextarea}
-            // {
-            //   ...submitted=true?
-            //    : value=""
-            // }
-            
             ref={answerDom}
-            // value={newAnswer}
-            // onChange={(e) => setNewAnswer(e.target.value)}
             placeholder="Your answer..."
           />
-          <button type="submit" className={styles.submitButton}>Post Answer</button>
+          <button type="submit" className={styles.submitButton}>
+            Post Answer
+          </button>
         </form>
       </div>
     </div>

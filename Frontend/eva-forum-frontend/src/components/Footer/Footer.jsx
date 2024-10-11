@@ -12,23 +12,18 @@ function Footer() {
           <img src="/evangadi-logo.png" alt="Evangadi Logo" /> {/* Replace with the actual path */}
           <br />
           <br />
+          <div className={classes.socialLinks}>
           <FaFacebook  size={40}/>  <FaSquareInstagram size={40} /> <GrYoutube size={40} />
+          </div>
+
+          
 
         </div>
 
-        {/* <div className={classes.socialLinks}>
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-            <i className="fab fa-facebook-f"><FaFacebook  size={40}/> </i>
-          </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-            <i className="fab fa-instagram"></i>
-          </a>
-          <a href="https://youtube.com" target="_blank" rel="noopener noreferrer">
-            <i className="fab fa-youtube"></i>
-          </a>
-        </div> */}
+      
 
         <div className={classes.footerLinks}>
+          <h3>Useful Link</h3>
           <ul>
             <li><a href="/how-it-works">How it works</a></li>
             <li><a href="/terms-of-service">Terms of Service</a></li>
@@ -37,6 +32,7 @@ function Footer() {
         </div>
 
         <div className={classes.contactInfo}>
+        <h3>Contact Info</h3>
           <p>Evangadi Networks</p>
           <p><a href="mailto:support@evangadi.com">support@evangadi.com</a></p>
           <p>+1-202-386-2702</p>

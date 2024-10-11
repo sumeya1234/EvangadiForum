@@ -63,13 +63,19 @@ function Signup() {
   };
 
   const handleCreateAccountClick = () => {
-    navigate("/login");
+    navigate("/signup");
   };
 
+  const handleLogin = () => {
+    navigate("/login");
+  }
   return (
     <div className={classes.container}>
       <div className={`${classes.signupBox} p-4 border rounded`}>
-        <h2>Join the Network</h2>
+        <h4>Join the Network</h4>
+        <p className={classes.loginLink}>
+          Already have an account? <span role="button" onClick={handleLogin}>Sign in</span>
+        </p>
         {error && <p className={classes.errorMessage}>{error}</p>}
 
         <form onSubmit={handleSubmit} className={classes.signupForm}>
@@ -79,18 +85,20 @@ function Signup() {
             placeholder="Username"
             required
           />
-          <input
-            ref={firstnameDom}
-            type="text"
-            placeholder="First Name"
-            required
-          />
-          <input
-            ref={lastnameDom}
-            type="text"
-            placeholder="Last Name"
-            required
-          />
+          <div className={classes.inputWrapper}>
+              <input
+              ref={firstnameDom}
+              type="text"
+              placeholder="First Name"
+              required
+            />
+            <input
+              ref={lastnameDom}
+              type="text"
+              placeholder="Last Name"
+              required
+            />
+          </div>
           <input
             ref={emailDom}
             type="email"
@@ -104,35 +112,34 @@ function Signup() {
             required
             minLength="8"
           />
-          <button type="submit" disabled={loading}>
-            {loading ? 'Registering...' : 'Register'}
+          <p>I agree to the <a href="" style={{color:"#fb8402"}}>privacy policy </a>and <a href="" style={{color:"#fb8402"}}>terms of service.</a></p>
+          <button type="submit" onClick={handleSubmit} disabled={loading}>
+            {loading ? 'Registering...' : 'Agree and Join'}
           </button>
         </form>
 
-        <p className={classes.loginLink}>
-          Already have an account? <span role="button" onClick={handleCreateAccountClick}>Sign in</span>
+        <p style={{color:"#fb8402"} } role="button" onClick={handleCreateAccountClick} className={classes.loginLink}>
+          Already have an account? 
         </p>
       </div>
       <div className={`${classes.aboutBox} p-4`}>
-        <h3 className={classes.about}>About</h3>
+        <h6 className={classes.about}>About</h6>
         <p>
-          <span className={classes.evangadiText}>
-            Evangadi Networks <br />
-          </span>
+        <span className={classes.evanga}>Evanga</span>
+     <span className={classes.di_network}>di Networks</span>
+
           <br />
           No matter what stage of life you are in, whether you’re just starting
-          elementary school or being promoted to CEO of a Fortune 500 company,
-          you have much to offer to those who are trying to follow in your
-          footsteps.
+          elementary school 
+          or being promoted to CEO of a Fortune 500 company, you have much to
+          offer to those 
+          who are trying to follow in your footsteps.
         </p>
         <br />
-        <p>
-          Whether you are willing to share your knowledge or you are just
-          looking to meet mentors of your own, please start by joining the
-          network here.
+        <p>Whether you are willing to share your knowledge or you are just looking to meet mentors of your own, please start by joining the network here.
         </p>
         <button
-          className="create-account-button btn btn-orange text-white"
+          className={classes.createAccountButton}
           onClick={handleCreateAccountClick}
           aria-label="Create a new account"
         >

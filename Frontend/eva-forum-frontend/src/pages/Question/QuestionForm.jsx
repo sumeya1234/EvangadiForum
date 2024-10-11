@@ -56,7 +56,7 @@ function QuestionForm() {
 
       <form onSubmit={handleSubmit}>
         <div className={classes.formGroup}>
-          <label htmlFor="title">Question Title:</label>
+          {/* <label htmlFor="title"></label> */}
           <input
           ref={titleDom}
             type="text"
@@ -70,7 +70,7 @@ function QuestionForm() {
 
 
         <div className={classes.formGroup}>
-          <label htmlFor="description">Question Description:</label>
+          {/* <label htmlFor="description"></label> */}
           <textarea
            ref={descriptionDom}
             id="description"

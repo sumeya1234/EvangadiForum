@@ -15,6 +15,7 @@ function Header() {
   };
 
   return (
+    <section className={classes.Wrapper}>
     <header className={classes.headerContainer}>
       <div className={classes.logo}>
         <Link to="/">
@@ -37,6 +38,7 @@ function Header() {
         )}
       </div>
     </header>
+    </section>
   );
 }
 
