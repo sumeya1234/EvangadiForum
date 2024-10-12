@@ -1,6 +1,6 @@
 const mysql2 = require('mysql2/promise'); // Use promise-based version
 
-// Database connection
+// created database connection a pool of connections to a MySQL database
 const dbConnection = mysql2.createPool({
   user: process.env.USER,
   database:process.env.DATABASE ,
@@ -9,16 +9,6 @@ const dbConnection = mysql2.createPool({
   connectionLimit: 10
 });
 console.log(process.env.JWT_SECRET)
-// Test the connection
-// async function testConnection() {
-//   try {
-//     const [result] = await dbConnection.query("SELECT 'test'");
-//     console.log(result);
-//   } catch (err) {
-//     console.log(err.message);
-//   }
-// }
 
-// testConnection();
 
-module.exports = dbConnection; // Ensure you export the connection pool
+module.exports = dbConnection; 

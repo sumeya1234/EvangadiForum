@@ -7,8 +7,6 @@ import { FaCircleArrowRight } from "react-icons/fa6";
 
 function QuestionForm() {
 
-  // const [title, setTitle] = useState("");
-  // const [description, setDescription] = useState("");
   const [error, setError] = useState(null);
   const titleDom = useRef();
   const descriptionDom = useRef(); 
@@ -61,8 +59,7 @@ function QuestionForm() {
           ref={titleDom}
             type="text"
             id="title"
-            // value={title}
-            // onChange={(e) => setTitle(e.target.value)}
+          
             placeholder="Enter your question title"
           />
         </div>
