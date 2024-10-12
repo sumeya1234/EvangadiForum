@@ -1,0 +1,112 @@
+/* Centering */
+.center-horizontal {
+  margin: 0 auto;
+}
+
+/* Container */
+.centeredContainer {
+  max-width: 800px;
+  padding: 20px;
+  margin-bottom: 100px;
+  margin: 0 auto;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Ask Question Button */
+.askQuestionBtn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease-in-out;
+  margin-bottom: 20px;
+}
+
+.askQuestionBtn:hover,
+.askQuestionBtn:focus {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* User Questions */
+.userQuestions {
+  margin-top: 20px;
+}
+
+/* Question Item */
+.questionItem {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+  gap: 200px;
+}
+
+/* Avatar */
+.avatar-container {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+/* Question Content */
+.questionContent {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.questionContent p{
+  margin: 0;
+  font-size: 18px;
+}
+
+
+.questionContent p {
+  margin: 5px 0;
+  color: black;
+}
+
+.questionContent .MdArrowForwardIos {
+  margin-left: 1rem;
+}
+.questionContent a:hover {
+  text-decoration: none;
+}
+a:hover{
+  text-decoration: none;
+  
+}
+
+.sortContainer {
+  margin-bottom: 1rem;
+}
+
+.sortSelect {
+  margin-left: 0.5rem;
+  padding: 0.25rem;
+  width: 100%;
+}
+
+.sortContainer select{
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    padding: 10px 20px;
+
+}

@@ -1,0 +1,56 @@
+.TagSearchResults{
+    background-color:gainsboro;
+    padding: 10px;
+    border:black 1px solid;
+    width: 800px;
+    margin: 0 auto;
+    border-radius: 5px;
+
+}
+
+.TagSearchResults ul li{
+    list-style-type:none;
+}
+
+.QuestDesc{
+     border-bottom:black 1px solid;
+}
+
+.TagSearchContainer{
+    width: 1000px;
+}
+
+.searchBar_wrapper{
+    display: flex;
+}
+ul li{
+    list-style-type: none;
+}
+.searchBar_wrapper input,.searchBar_wrapper button{
+    /* border-radius: 5px; */
+    outline: none;
+    border-radius: 25px;
+}
+.searchBar_wrapper input{
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    padding: 10px 20px;
+
+}
+.searchBar_wrapper button{
+    background-color: #007bff;
+    transition : all 0.3s ease;
+    color: white;
+    margin-left: -50px;
+    border: none;
+    padding: 10px;
+
+}
+.searchBar_wrapper button:hover{
+    background-color: #0054ad;
+}
+.searchBar_wrapper input:focus{
+    outline: none !important;
+    border: 1px solid #ccc;
+}

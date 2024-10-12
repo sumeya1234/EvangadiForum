@@ -1,0 +1,166 @@
+/* .footer {
+    background-color: #3B455A;
+    color: white;
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .footerContainer {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo img {
+    height: 40px;
+  }
+  
+  .socialLinks {
+    display: flex;
+    gap: 25px;
+  }
+  
+  .socialLinks a {
+    color: white;
+    font-size: 20px;
+  }
+  
+  .socialLinks a:hover {
+    color: #f39c12; /* Hover color for icons */
+  /* }
+  
+  .footerLinks ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .footerLinks ul li {
+    margin: 5px 0;
+  }
+  
+  .footerLinks ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .footerLinks ul li a:hover {
+    color: #f39c12;
+  }
+  
+  .contactInfo p {
+    margin: 5px 0;
+  }
+  
+  .contactInfo a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  .contactInfo a:hover {
+    color: #f39c12;
+  }
+    */
+
+
+    .footer {
+      background-color: #3B455A; /* Dark navy blue */
+      color: white;
+      padding: 40px 0;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+    
+    .footerContainer {
+      width: 90%;
+      max-width: 1200px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start; /* Adjust alignment to the top */
+      flex-wrap: wrap; /* Wrap items on small screens */
+    }
+    
+    .logo img {
+      height: 40px;
+    }
+    
+    .socialLinks {
+      display: flex;
+      gap: 25px;
+    }
+    
+    .socialLinks a {
+      color: white;
+      font-size: 20px;
+    }
+    
+    .socialLinks a:hover {
+      color: #f39c12; /* Hover color for icons */
+    }
+    
+    .footerLinks ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .footerLinks ul li {
+      margin: 5px 0;
+    }
+    
+    .footerLinks ul li a {
+      color: grey;
+      text-decoration: none;
+    }
+    
+    .footerLinks ul li a:hover {
+      color: #f39c12;
+    }
+    
+    .contactInfo p {
+      margin: 5px 0;
+      color: grey;
+    }
+    
+    .contactInfo a {
+      color: white;
+      text-decoration: none;
+    }
+    
+    .contactInfo a:hover {
+      color: #f39c12;
+    }
+    
+    /* Responsive Design */
+    @media screen and (max-width: 768px) {
+      .footerContainer {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+    
+      .footerLinks ul, .contactInfo {
+        margin-top: 20px;
+      }
+    
+      .socialLinks {
+        justify-content: center;
+        margin-top: 20px;
+      }
+    
+      .socialLinks a {
+        font-size: 30px; /* Make the icons larger on smaller screens */
+      }
+    }
+    
+    @media screen and (max-width: 480px) {
+      .logo img {
+        height: 30px;
+      }
+    
+      .socialLinks a {
+        font-size: 24px; /* Slightly smaller icons on very small screens */
+      }
+    }
