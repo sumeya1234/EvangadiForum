@@ -1,78 +1,96 @@
-import { useContext, useEffect, useState } from "react";
-import { AppState } from "../../App"; // Importing AppState context to access user data
+import React, { useContext, useEffect, useState } from "react";
+import { AppState } from "../../App";
 import { Link } from "react-router-dom";
-import axios from "../../axiosConfig";
+import axiosBase from "../../axiosConfig";
 import classes from "./Home.module.css";
-import { CgProfile } from "react-icons/cg";
 import { MdArrowForwardIos } from "react-icons/md";
-import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
 import { FaUserCircle } from "react-icons/fa";
-
+import TagSearch from "../../components/TaggedQuestions/TaggedQuestions";
 
 function Home() {
-  //Accessing user state from context
   const { user } = useContext(AppState);
-
-  // state variable for questions,loading status, and error handling
   const [questions, setQuestions] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [sortMethod, setSortMethod] = useState("id");
 
-  // Effect to fetch questions from the server when the component mounts
   useEffect(() => {
     const fetchQuestions = async () => {
-      setLoading(true); // Set loading to true before fetching
-      setError(null); // Reset error state
+      setLoading(true);
+      setError(null);
 
       try {
-        // Fetching questions from the API
-        const response = await axios.get(`/question`);
-        setQuestions(response.data.questions); // Storing fetched questions in state
-        console.log(questions)
+        const response = await axiosBase.get(`/question`);
+        setQuestions(response.data.questions);
       } catch (error) {
         console.error("Error fetching questions", error);
         setError("Failed to load questions. Please try again later.");
       } finally {
-        setLoading(false); // Setting loading to false after fetching
+        setLoading(false);
       }
     };
 
-    fetchQuestions(); // call the fetch function
-  }, []); // Empty dependency array means this runs once on mount
+    fetchQuestions();
+  }, []);
+
+  const sortQuestions = (questions, method) => {
+    if (method === "id") {
+      return [...questions].sort((a, b) => b.id - a.id);
+    } else if (method === "title") {
+      return [...questions].sort((a, b) => a.title.localeCompare(b.title));
+    }
+    return questions;
+  };
+
+  const handleSortChange = (e) => {
+    setSortMethod(e.target.value);
+  };
+
+  const sortedQuestions = sortQuestions(questions, sortMethod);
 
   return (
     <div className={classes.centeredContainer}>
       <div className={classes.header}>
-      <Link to={user ? "/ask-question" : "/login"}>
+        <Link to={user ? "/ask-question" : "/login"}>
           <button className={classes.askQuestionBtn}>Ask Question</button>
         </Link>
-        {user && <h5 >Welcome : <span style={{color:"#fb8402"}}>{user.username}</span> </h5>}
-        
+        {user && (
+          <h5>
+            Welcome : <span style={{ color: "#fb8402" }}>{user.username}</span>
+          </h5>
+        )}
       </div>
-      <form class="form-inline my-2 my-lg-0" >
-      <input style={{width:"700px"}} class="form-control mr-sm-2" type="search" placeholder="Search question" aria-label="Search"/>
-    
-    </form>
+      <form className="form-inline my-2 my-lg-0">
+        <TagSearch />
+      </form>
+      <div className={classes.sortContainer}>
+        <label htmlFor="sort-select">Sort results by: </label>
+        <select
+          id="sort-select"
+          value={sortMethod}
+          onChange={handleSortChange}
+          className={classes.sortSelect}
+        >
+          <option value="id">Most Recent</option>
+          <option value="title">Title (A-Z)</option>
+        </select>
+      </div>
       <div className={classes.userQuestions}>
-      
         {loading && <p>Loading questions...</p>}
         {error && <p style={{ color: "red" }}>{error}</p>}
-        {questions?.map((question) => (
+        {sortedQuestions.map((question) => (
           <div key={question.questionid} className={classes.questionItem}>
             <div>
-            <FaUserCircle size={60} />
-         
-            <p>{question.username}</p>
-        
+              <FaUserCircle size={60} />
+              <p>{question.username}</p>
             </div>
-           
-
-
             <Link
               to={`/question/${question.questionid}`}
               className={classes.questionContent}
             >
-              <p>{question.title}</p>
+              <p style={{ textAlign: "left", width: "100%" }}>
+                {question.title}
+              </p>
               <MdArrowForwardIos size={40} color="#000" />
             </Link>
           </div>

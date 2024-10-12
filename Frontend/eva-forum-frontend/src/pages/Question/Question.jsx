@@ -4,6 +4,7 @@ import axios from '../../axiosConfig';
 import { FaCircleArrowRight } from "react-icons/fa6";
 import styles from './Question.module.css';
 import { AppState } from '../../App'; // Import user state
+import { FaUserCircle } from 'react-icons/fa';
 
 function Question() {
   const { user } = useContext(AppState); // Get the user state
@@ -13,7 +14,10 @@ function Question() {
   const [answers, setAnswers] = useState([]);
   const answerDom = useRef(null);
 
+  
+
   useEffect(() => {
+    
     const fetchQuestionAndAnswers = async () => {
       try {
         const questionResponse = await axios.get(`/question/${question_id}`);
@@ -21,9 +25,10 @@ function Question() {
 
         const answerResponse = await axios.get(`/answer/${question_id}`);
         setAnswers(answerResponse.data.answers);
+        console.log(answers);
       } catch (error) {
         console.error('Error fetching data:', error);
-      }
+      } 
     };
 
     fetchQuestionAndAnswers();
@@ -42,13 +47,27 @@ function Question() {
     }
 
     try {
-      await axios.post('/answer', { questionid: question_id, answer: answerValue }, {
-        headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
-      });
+      const token = localStorage.getItem('token');
+      if (!token) {
+        alert("No token found. Please log in again.");
+        navigate("/login");
+        return;
+    }
+      console.log(token)
+
+      await axios.post('/answer', {
+        questionid: question_id,
+        answer: answerValue
+    }, {
+        headers: {
+            Authorization: `Bearer ${token}`
+        }
+    });
 
       answerDom.current.value = '';
       const updatedAnswers = await axios.get(`/answer/${question_id}`);
       setAnswers(updatedAnswers.data.answers);
+      console.log(updatedAnswers);
     } catch (error) {
       console.error('Error posting answer:', error);
     }
@@ -63,6 +82,7 @@ function Question() {
           <>
             <p><FaCircleArrowRight size={20} /> {question.title}</p>
             <p>{question.description}</p>
+            <p> tag - #{question.tag}</p>
           </>
         ) : (
           <p>Loading question...</p>
@@ -74,7 +94,10 @@ function Question() {
         {answers.length > 0 ? (
           answers.map((answer) => (
             <div key={answer.answerid} className={styles.answer}>
+              <div>
+              <FaUserCircle size={60} />
               <p><strong>{answer.username}</strong></p>
+              </div>
               <p>{answer.answer}</p>
             </div>
           ))

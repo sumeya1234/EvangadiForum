@@ -92,3 +92,21 @@ a:hover{
   text-decoration: none;
   
 }
+
+.sortContainer {
+  margin-bottom: 1rem;
+}
+
+.sortSelect {
+  margin-left: 0.5rem;
+  padding: 0.25rem;
+  width: 100%;
+}
+
+.sortContainer select{
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    padding: 10px 20px;
+
+}

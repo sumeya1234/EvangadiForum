@@ -9,6 +9,10 @@ const dbConnection = mysql2.createPool({
   connectionLimit: 10
 });
 console.log(process.env.JWT_SECRET)
+
+
+
+
 // Test the connection
 // async function testConnection() {
 //   try {

@@ -9,6 +9,7 @@
  
 }
 
+
 .questionTitle {
   font-size: 2rem;
   margin-bottom: 10px;
@@ -25,13 +26,18 @@
 }
 
 .answer {
+  display: flex;
+  text-align: center;
+  align-items: center;
   background-color: #f4f4f4;
   padding: 15px;
   margin-bottom: 10px;
   border-radius: 5px;
   transition: background-color 0.3s; /* Smooth background color change */
 }
-
+.answer p{
+  padding-left: 20px;
+}
 .answer:hover {
   background-color: #e9e9e9; /* Slightly darker on hover */
 }
@@ -48,6 +54,9 @@
   border-radius: 5px;
   border: 1px solid #ccc;
   resize: none; /* Prevent resizing */
+}
+.answerTextarea:focus{
+ background-color: rgb(248, 233, 201);
 }
 
 .submitButton {

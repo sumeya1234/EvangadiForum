@@ -1,4 +1,4 @@
-
+/* 
 .container {
   display: flex;
   justify-content: center;
@@ -13,10 +13,10 @@
   background-size: cover; 
  
 
-}
+} */
 
-.signupBox {
-  /* margin-top: 100px; */
+/* .signupBox {
+  /* margin-top: 100px; 
   margin-left: 55px;
   text-align: center;
   background-color: #fff;
@@ -25,19 +25,21 @@
   padding: 20px;
   width: 700px;
   height: 600px;
-}
+} */
 
-.aboutBox {
-  /* margin-top: 100px; */
+
+/* .aboutBox {
+  
   width: 700px;
   height: 450px;
   box-shadow: none;
   padding: 20px 30px;
-}
+} */
 
 .signupBox h4 {
-  margin-top: 0;
+  margin-top: 20px;
   margin-bottom: 10px;
+
 }
 .inputWrapper{
   display: flex;
@@ -58,7 +60,14 @@
   outline: none;
   box-sizing: border-box;
   margin-bottom: 15px; /* Consistent spacing */
-  transition: border-color 0.3s ;
+  outline: none; /* Remove the default outline */
+  transition: border-bottom 0.3s ease; /* Smooth transition for border */
+}
+.signupForm input:focus{
+  border: 1px solid #ccc;
+  border-bottom: 4px solid #fb8402; 
+  outline: none; /* Remove the default outline */
+  transition:step-start 0.3s ease; 
 }
 input:focus{
   border: 1px solid #fb8402;
@@ -98,15 +107,34 @@ input:focus{
 .loginLink span:hover {
   text-decoration: underline; /* Underline on hover */
 }
-
+.passwordWrapper{
+  display: flex;
+  align-items: center;
+}
+.eyes{
+  color: #ccc;
+  display: flex;
+  align-items: center;
+  margin-bottom: 7px;
+  margin-left: -35px;
+  cursor: pointer;
+  transition : all 0.3s ease;
+}
+.eyes:hover{
+  color: #fb8402;
+}
+.activeEye{
+  color: #fb8402 !important;
+}
+/* 
 .about {
-  color: #fb8402; /* About section color */
+  color: #fb8402; /* About section color 
 }
 .aboutBox p{
   font-size: 16px;
   font-weight: 400;
   color: #757575;
-}
+} */
 .evangadiText {
   color: rgb(123, 34, 0);
   font-weight: 900;
@@ -115,7 +143,7 @@ input:focus{
 
 /* Additional button styles */
 
-.createAccountButton {
+/* .createAccountButton {
   margin: 35px 0;
   background-color: #fb8402;
   color: white;
@@ -128,10 +156,10 @@ input:focus{
 }
 
 .createAccountButton:hover {
-  background-color: #c86700;  /*Dark shade on hover*/
-}
+  background-color: #c86700;  /*Dark shade on hover
+} */
 
-.evanga {
+/* .evanga {
   font-size: 45px ;
   color: rgb(204, 84, 47);
   font-weight: 900; 
@@ -140,4 +168,4 @@ input:focus{
   font-size: 45px ;
   color: rgb(129, 35, 0); 
   font-weight:900;
-}
+} */

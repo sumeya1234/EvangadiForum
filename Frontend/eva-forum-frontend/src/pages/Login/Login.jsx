@@ -158,7 +158,7 @@ import { AppState } from "../../App";
 import classes from "./Login.module.css";
 import { FaEye } from "react-icons/fa";
 import { FaEyeSlash } from "react-icons/fa6";
-function Login() {
+function Login({toggleForm}) {
   const navigate = useNavigate();
   const { setUser } = useContext(AppState);
   const [email, setEmail] = useState("");
@@ -204,7 +204,7 @@ function Login() {
   }
 
   const handleCreateAccountClick = () => {
-    navigate("/signup");
+    navigate('/signup');
   };
 
   return (
@@ -251,7 +251,7 @@ function Login() {
             disabled={loading}
             onClick={handleSubmit}
           >
-            {loading ? "Logging in..." : "LOG IN"}
+            {loading ? "Logging in..." : "LOGIN"}
           </button>
         </form>
         <p className={classes.register_link}>
@@ -259,13 +259,15 @@ function Login() {
           <span
             className={classes.highlightText}
             role="button"
-            onClick={handleCreateAccountClick}
+            onClick={toggleForm}
           >
             Create a new account
           </span>
         </p>
       </div>
-      <div className={`${classes.about_box}`}>
+
+      
+      {/* <div className={`${classes.about_box}`}>
         <h2 className={classes.about}>About</h2>
         <p>
           <span className={classes.evangadi_text}>
@@ -288,7 +290,7 @@ function Login() {
         >
           CREATE A NEW ACCOUNT
         </button>
-      </div>
+      </div> */}
     </div>
   );
 }

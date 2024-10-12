@@ -25,11 +25,16 @@
   display: flex;
   gap: 20px;
   margin-left: auto; /* This will float it to the right */
+
 }
 
 .navLinks a {
   text-decoration: none;
   color: #333;
+}
+
+.navLinks a:hover{
+  color: orange;
 }
 
 .authButton button {
