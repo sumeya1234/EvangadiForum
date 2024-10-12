@@ -11,6 +11,8 @@ const dbConnection = require("./Database/dbConfig");  // DB connection
 const userRoutes = require("./Route/userRoute");
 const questionRoutes = require("./Route/questionRoute");
 const answerRoutes = require("./Route/answerRoute");
+
+const tagRoutes = require("./Route/tagRoute");
 // JSON middleware to extract json data
 app.use(express.json());
 
@@ -23,6 +25,8 @@ app.use("/api/question", questionRoutes)
 // Answers route middleware
 app.use("/api/answer", answerRoutes);
 
+// ragged route middleware
+app.use("/api/questions",tagRoutes)
 async function start(){
     try {
         const result = dbConnection.execute("select 'test' ");

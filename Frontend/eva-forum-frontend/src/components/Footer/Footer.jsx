@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import classes from './Footer.module.css'; 
 import { FaFacebook } from "react-icons/fa6";
 import { FaSquareInstagram } from "react-icons/fa6";
@@ -13,28 +14,30 @@ function Footer() {
           <br />
           <br />
           <div className={classes.socialLinks}>
-          <FaFacebook  size={40}/>  <FaSquareInstagram size={40} /> <GrYoutube size={40} />
+            <Link to="https://www.facebook.com/evangaditech">
+              <FaFacebook size={40} />
+            </Link>
+            <Link to="https://www.instagram.com/evangaditech/">
+              <FaSquareInstagram size={40} />
+            </Link>
+            <Link to="https://www.youtube.com/@EvangadiTech">
+              <GrYoutube size={40} />
+            </Link>
           </div>
-
-          
-
         </div>
 
-      
-
         <div className={classes.footerLinks}>
-          <h3>Useful Link</h3>
+          <h5>Useful Links</h5>
           <ul>
-            <li><a href="/how-it-works">How it works</a></li>
-            <li><a href="/terms-of-service">Terms of Service</a></li>
-            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><Link to="/terms-of-service">Terms of Service</Link></li>
+            <li><Link to="/privacy-policy">Privacy Policy</Link></li>
           </ul>
         </div>
 
         <div className={classes.contactInfo}>
-        <h3>Contact Info</h3>
-          <p>Evangadi Networks</p>
-          <p><a href="mailto:support@evangadi.com">support@evangadi.com</a></p>
+          <h5>Contact Info</h5>
+         
+          <p><Link to="mailto:support@evangadi.com">support@evangadi.com</Link></p>
           <p>+1-202-386-2702</p>
         </div>
       </div>

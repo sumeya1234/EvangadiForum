@@ -1,0 +1,81 @@
+/* auth.module.css */
+
+.container {
+    display: flex; /* Align items horizontally */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    min-height: 100vh; /* Full height of the viewport */
+    background-color: #f8f8f8; /* Background color for the container */
+    background-image: url(../public/bg-svg-f.svg);
+    background-size: cover; 
+    padding: 80px 10px;
+    gap: 40px;
+}
+
+.aboutBox {
+    width: 700px;
+    height: 450px;
+    padding: 20px 30px;
+    box-shadow: none;
+}
+
+.about {
+    color: #fb8402; /* About section color */
+}
+
+.aboutBox p {
+    font-size: 16px;
+    font-weight: 400;
+    color: #757575;
+}
+
+.evanga {
+    font-size: 45px;
+    color: rgb(204, 84, 47);
+    font-weight: 900; 
+}
+
+.di_network {
+    font-size: 45px;
+    color: rgb(129, 35, 0); 
+    font-weight: 900;
+}
+
+.createAccountButton {
+    margin: 35px 0;
+    background-color: #fb8402;
+    color: white;
+    padding: 15px 30px;
+    border: 1px #fb8402 solid;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.createAccountButton:hover,
+.createAccountButton:focus {
+    background-color: #c86700;  /* Dark shade on hover */
+    border: 1px #fb8402 solid;
+}
+
+.formBox {
+    position: relative; /* Necessary for sliding effect */
+    width: 700px; /* Fixed width for both forms */
+    height: 600px; /* Fixed height to make both boxes equal */
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    padding: 20px;
+    transition: transform 0.5s ease; /* Smooth transition */
+    overflow: hidden; /* Prevent overflow during transition */
+}
+
+.slide-in {
+    transform: translateX(0); /* Original position */
+}
+
+.slide-out {
+    transform: translateX(-100%); /* Slide out to the left */
+}

@@ -144,7 +144,7 @@ outline: none;
   font-weight:900;
 } */
 
-.centered_container {
+/* .centered_container {
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -153,10 +153,10 @@ outline: none;
   padding: 80px 10px;
   margin-bottom: 35px;
   box-sizing: border-box;
-}
+} */
 
-.login_box {
-  /* margin-top: 100px; */
+/* .login_box {
+  /* margin-top: 100px; 
   margin-left: 55px;
   text-align: center;
   background-color: #fff;
@@ -165,6 +165,9 @@ outline: none;
   padding: 20px;
   width: 700px;
   height: 500px;
+} */
+.login_box{
+  padding:40px;
 }
 
 .about_box {
@@ -180,8 +183,10 @@ outline: none;
 }
 
 .login_box h2{
-  margin-bottom:15px;
-  margin-top: 10px;
+  margin-bottom:25px;
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: bold;
 }
 /* .about_box h2 {
   margin: 10px 0;
@@ -206,11 +211,18 @@ outline: none;
   outline: none;
   border-radius: 4px;
   box-sizing: border-box;
-  transition: border-color 0.3s ;
+  /* border-bottom: 2px solid #ccc; Set a default bottom border */
+  outline: none; /* Remove the default outline */
+  transition: border-bottom 0.3s ease; /* Smooth transition for border */
 }
-input:focus{
-  border: 1px solid #fb8402;
+
+ .input:focus {
+  border: 1px solid #ccc;
+  border-bottom: 4px solid #fb8402; 
+  outline: none; /* Remove the default outline */
+  transition:step-start 0.3s ease; 
 }
+
 
 .loginButton {
   background-color:  #007bff;

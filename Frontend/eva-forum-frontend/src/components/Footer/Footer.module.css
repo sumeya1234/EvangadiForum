@@ -111,7 +111,7 @@
     }
     
     .footerLinks ul li a {
-      color: white;
+      color: grey;
       text-decoration: none;
     }
     
@@ -121,6 +121,7 @@
     
     .contactInfo p {
       margin: 5px 0;
+      color: grey;
     }
     
     .contactInfo a {

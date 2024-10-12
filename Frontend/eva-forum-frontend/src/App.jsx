@@ -9,6 +9,7 @@ import QuestionForm from "./pages/Question/QuestionForm";
 import Features from "./components/Features/Features";
 import Footer from "./components/Footer/Footer";
 import axios from "./axiosConfig";
+import AuthContainer from "./pages/authContainer/authContainer";
 
 
 // creating a context for managing user state across the app
@@ -62,8 +63,12 @@ function App() {
         />
 
         {/* Authentication routes */}
-        <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        {/* <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} /> */}
+
+          {/* Authentication route that uses the AuthContainer */}
+          <Route path="/login" element={<AuthContainer initialForm="login" />} />
+          <Route path="/signup" element={<AuthContainer initialForm="signup" />} />
 
         {/* Information page about how the application works */}
         <Route path="/how-it-works" element={<Features />} />
