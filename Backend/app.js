@@ -25,7 +25,7 @@ app.use("/api/question", questionRoutes)
 // Answers route middleware
 app.use("/api/answer", answerRoutes);
 
-// ragged route middleware
+// tagged route middleware
 app.use("/api/questions",tagRoutes)
 async function start(){
     try {
