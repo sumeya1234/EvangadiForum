@@ -4,13 +4,14 @@ import classes from './Footer.module.css';
 import { FaFacebook } from "react-icons/fa6";
 import { FaSquareInstagram } from "react-icons/fa6";
 import { GrYoutube } from "react-icons/gr";
+import evangadiLogo from "../../assets/evangadi-logo.png";
 
 function Footer() {
   return (
     <footer className={classes.footer}>
       <div className={classes.footerContainer}>
         <div className={classes.logo}>
-          <img src="/evangadi-logo.png" alt="Evangadi Logo" /> {/* Replace with the actual path */}
+          <img src={evangadiLogo} alt="Evangadi Logo"/> {/* Replace with the actual path */}
           <br />
           <br />
           <div className={classes.socialLinks}>

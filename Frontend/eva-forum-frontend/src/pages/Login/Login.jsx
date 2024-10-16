@@ -58,6 +58,7 @@ function Login({toggleForm}) {
   };
 
   return (
+    <section className={classes.Login_Wrapper}>
     <div className={classes.centered_container}>
       <div className={`${classes.login_box}`}>
         <h2>Login to Your Account</h2>
@@ -115,8 +116,10 @@ function Login({toggleForm}) {
           </span>
         </p>
       </div>
-
+      
+     
     </div>
+    </section>
   );
 }
 

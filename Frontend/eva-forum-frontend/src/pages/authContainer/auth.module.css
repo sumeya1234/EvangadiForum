@@ -6,7 +6,7 @@
     align-items: center; /* Center vertically */
     min-height: 100vh; /* Full height of the viewport */
     background-color: #f8f8f8; /* Background color for the container */
-    background-image: url(../public/bg-svg-f.svg);
+    background-image: url(../../assets/bg-svg-f.svg);
     background-size: cover; 
     padding: 80px 10px;
     gap: 40px;
@@ -78,4 +78,41 @@
 
 .slide-out {
     transform: translateX(-100%); /* Slide out to the left */
+}
+
+/* Responsive media queries */
+@media (max-width: 768px) {
+    .aboutBox {
+        width: 100%; /* Full width on smaller screens */
+    }
+
+    .formBox {
+        width: 100%; /* Full width on smaller screens */
+    }
+
+    .evanga, .di_network {
+        font-size: 2rem; /* Reduce font size on smaller screens */
+    }
+
+    .createAccountButton {
+        width: 100%; /* Make button full width */
+        padding: 12px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 40px 10px; /* Reduce padding on very small screens */
+    }
+
+    .evanga, .di_network {
+        font-size: 1.8rem; /* Further reduce font size */
+    }
+
+    .aboutBox{
+        display: none;
+    }
+    .aboutBox p {
+        font-size: 0.9rem; /* Smaller font for paragraphs */
+    }
 }
