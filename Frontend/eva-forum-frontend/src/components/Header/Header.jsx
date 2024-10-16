@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AppState } from "../../App";
 import classes from "./Header.module.css";
-import evangadiLogo from "../../../public/evangadi-logo.png";
+import evangadiLogo from "../../assets/evangadi-logo.png";
 import MenuIcon from "@mui/icons-material/Menu"; // You can use any icon library
 
 function Header() {

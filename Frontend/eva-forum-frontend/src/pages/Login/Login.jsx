@@ -58,6 +58,7 @@ function Login({toggleForm}) {
   };
 
   return (
+    <section className={classes.Login_Wrapper}>
     <div className={classes.centered_container}>
       <div className={`${classes.login_box}`}>
         <h2>Login to Your Account</h2>
@@ -115,33 +116,10 @@ function Login({toggleForm}) {
           </span>
         </p>
       </div>
-
       
-      {/* <div className={`${classes.about_box}`}>
-        <h2 className={classes.about}>About</h2>
-        <p>
-          <span className={classes.evangadi_text}>
-            Evangadi Networks <br />
-          </span>
-          <br />
-          No matter what stage of life you are in, whether you’re just starting
-          elementary school 
-          or being promoted to CEO of a Fortune 500 company, you have much to
-          offer to those 
-          who are trying to follow in your footsteps.
-        </p>
-        <br />
-        <p>Whether you are willing to share your knowledge or you are just looking to meet mentors of your own, please start by joining the network here.
-        </p>
-        <button
-          className={classes.createAccountButton}
-          onClick={handleCreateAccountClick}
-          aria-label="Create a new account"
-        >
-          CREATE A NEW ACCOUNT
-        </button>
-      </div> */}
+     
     </div>
+    </section>
   );
 }
 

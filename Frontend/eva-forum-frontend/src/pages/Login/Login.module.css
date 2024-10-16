@@ -1,32 +1,14 @@
-/* .centered_container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  height: 100vh;
-  gap: 0;
-  padding: 45px;
-  margin-bottom: 5px;
-  box-sizing: border-box;
-  background-size: cover; 
-    background-image: url(../public/evangadi-bg.jpg);
-}
-
 .login_box {
-  margin-top: 100px;
-  margin-left: 55px;
-  text-align: center;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
-  width: 610px;
-  height: 450px;
+  padding: 40px;
+  width: 90%;
+  max-width: 600px; /* Set a max-width to ensure it's not too large */
+  margin: 0 auto; /* Center on the page */
 }
 
 .about_box {
-  margin-top: 100px;
-  width: 610px;
-  height: 450px;
+  width: 90%; /* Use percentage for flexibility */
+  max-width: 700px;
+  height: auto; /* Set height to auto for responsiveness */
   box-shadow: none;
   padding: 20px 30px;
 }
@@ -35,174 +17,28 @@
   color: #fb8402;
 }
 
-.login_box h2,
-.about_box h3 {
-  margin-top: 0;
-}
-
-.formGroup {
-  margin-bottom: 15px;
-  width: 100%;
-}
-.formGroup:last-of-type{
-  display: flex;
-}
-.eye{
-  margin-left: -40px;
-  display: flex;
-  align-items: center;
-  cursor: pointer;
- 
-}
-.eye:hover{
-border: none;
-outline: none;
-}
-.input {
-  width: 100%;
-  height: 55px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-
-.loginButton {
-  background-color: #0056b3;
-  margin-top: 30px;
-  height: 55px;
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 4px;
-  cursor: pointer;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.loginButton:hover {
-  background-color: #007bff;
-}
-
-.forgotPasswordLink {
-  padding-left: 400px;
-  color: #fb8402;
-}
-
-.register_link {
-  margin-bottom: 35px;
-  margin-top: 10px;
-}
-
-.register_link,
-.forgotPasswordLink,
-.createAccountButton {
-  display: inline-block;
-  margin-top: 10px;
-  text-decoration: none;
-}
-
-.createAccountButton {
-  background-color: #fb8402;
-  color: white;
-  padding: 10px;
-  border-radius: 4px;
-  text-align: center;
-  text-decoration: none;
-}
-
-.createAccountButton:hover {
-  background-color: #fb8402;
-}
-
-.black-text {
-  color: #333;
-}
-
-.highlightText {
-  color: #fb8402;
-  font-weight: bold;
-}
-
-.evangadi_text {
-  color: rgb(123, 34, 0);
-  font-weight: 900;
-  font-size: 34px;
-}
-.errorMessage {
-  color: red;
-  margin-bottom: 10px;
-}
-.evanga {
-  font-size: 45px ;
-  color: rgb(204, 84, 47);
-  font-weight: 900; 
-}
-.di_network {
-  font-size: 45px ;
-  color: rgb(129, 35, 0); 
-  font-weight:900;
-} */
-
-/* .centered_container {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  height: 110vh;
-  gap: 40px;
-  padding: 80px 10px;
-  margin-bottom: 35px;
-  box-sizing: border-box;
-} */
-
-/* .login_box {
-  /* margin-top: 100px; 
-  margin-left: 55px;
-  text-align: center;
-  background-color: #fff;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
-  border-radius: 8px;
-  padding: 20px;
-  width: 700px;
-  height: 500px;
-} */
-.login_box{
-  padding:40px;
-}
-
-.about_box {
-  /* margin-top: 100px; */
-  width: 700px;
-  height: 450px;
-  box-shadow: none;
-  padding: 20px 30px;
-}
-
-.about {
-  color: #fb8402;
-}
-
-.login_box h2{
-  margin-bottom:25px;
+.login_box h2 {
+  margin-bottom: 25px;
   margin-top: 20px;
-  font-size: 20px;
+  font-size: 1.25rem; /* Use rem for scalable font size */
   font-weight: bold;
 }
-/* .about_box h2 {
-  margin: 10px 0;
-} */
-.about_box p{
-  font-size: 16px;
+
+.about_box p {
+  font-size: 1rem; /* Use rem for font scaling */
   font-weight: 400;
   color: #757575;
 }
+
 .formGroup {
   margin-bottom: 15px;
   width: 100%;
 }
-.formGroup:last-of-type{
+
+.formGroup:last-of-type {
   display: flex;
 }
+
 .input {
   width: 100%;
   height: 55px;
@@ -211,54 +47,57 @@ outline: none;
   outline: none;
   border-radius: 4px;
   box-sizing: border-box;
-  /* border-bottom: 2px solid #ccc; Set a default bottom border */
-  outline: none; /* Remove the default outline */
-  transition: border-bottom 0.3s ease; /* Smooth transition for border */
+  transition: border-bottom 0.3s ease;
 }
 
- .input:focus {
+.input:focus {
   border: 1px solid #ccc;
-  border-bottom: 4px solid #fb8402; 
-  outline: none; /* Remove the default outline */
-  transition:step-start 0.3s ease; 
+  border-bottom: 4px solid #fb8402;
+  outline: none;
+  transition: border-bottom 0.3s ease;
 }
-
 
 .loginButton {
-  background-color:  #007bff;
+  background-color: #007bff;
   margin: 30px 0;
   height: 55px;
   color: white;
-  font-size: 16px;
+  font-size: 1rem; /* Use rem for font scalability */
   border: none;
   padding: 10px;
   border-radius: 4px;
   cursor: pointer;
   width: 100%;
   box-sizing: border-box;
-  transition : all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .loginButton:hover {
   background-color: #0056b3;
 }
-.eyes{
+
+.eyes {
   color: #ccc;
   display: flex;
   align-items: center;
   margin-left: -35px;
   cursor: pointer;
-  transition : all 0.3s ease;
+  transition: all 0.3s ease;
 }
-.eyes:hover{
+
+.eyes:hover {
   color: #fb8402;
 }
-.activeEye{
+
+.activeEye {
   color: #fb8402 !important;
 }
+
 .forgotPasswordLink {
-  padding-left: 375px;
+  padding-left: 0;
   color: #fb8402;
+  text-align: right; /* Aligns the link to the right */
+  display: block; /* Set as block for easier alignment */
 }
 
 .register_link {
@@ -301,8 +140,57 @@ outline: none;
 .evangadi_text {
   color: rgb(123, 34, 0);
   font-weight: 900;
-  font-size: 34px;
+  font-size: 2rem; /* Use rem for responsive font size */
 }
+
 .errorMessage {
   color: red;
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+  .login_box, .about_box {
+    width: 100%; /* Full width on smaller screens */
+  }
+
+  .login_box h2 {
+    font-size: 1.1rem; /* Reduce font size on tablets */
+  }
+
+  .evangadi_text {
+    font-size: 1.8rem; /* Adjust heading size */
+  }
+
+  .forgotPasswordLink {
+    padding-left: 0;
+    text-align: center; /* Center the link on tablets */
+  }
+
+  .eyes {
+    margin-left: -25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login_box, .about_box {
+    width: 100%; /* Full width on mobile */
+    padding: 20px; /* Reduce padding for small screens */
+  }
+
+  .login_box h2 {
+    font-size: 1rem; /* Smaller heading on mobile */
+  }
+
+  .evangadi_text {
+    font-size: 1.5rem; /* Further reduce heading size */
+  }
+
+  .forgotPasswordLink {
+    text-align: center; /* Center the link on small screens */
+    padding-left: 0;
+  }
+
+  .createAccountButton {
+    padding: 10px 20px; /* Reduce padding on small screens */
+  }
 }
