@@ -57,7 +57,7 @@ function Signup({toggleForm}) {
         password: passValue,
       });
       alert('Registration was successful. Please login.');
-      navigate("/login");
+      toggleForm()
     } catch (error) {
       setError(error?.response?.data?.msg || 'Something went wrong, please try again.');
       console.log(error?.response?.data);
