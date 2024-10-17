@@ -11,10 +11,8 @@ import Footer from "./components/Footer/Footer";
 import axios from "./axiosConfig";
 import AuthContainer from "./pages/authContainer/authContainer";
 
-
 // creating a context for managing user state across the app
 export const AppState = React.createContext();
-
 
 function App() {
   // state for managing the authenticated user
@@ -66,9 +64,12 @@ function App() {
         {/* <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} /> */}
 
-          {/* Authentication route that uses the AuthContainer */}
-          <Route path="/login" element={<AuthContainer initialForm="login" />} />
-          <Route path="/signup" element={<AuthContainer initialForm="signup" />} />
+        {/* Authentication route that uses the AuthContainer */}
+        <Route path="/login" element={<AuthContainer initialForm="login" />} />
+        <Route
+          path="/signup"
+          element={<AuthContainer initialForm="signup" />}
+        />
 
         {/* Information page about how the application works */}
         <Route path="/how-it-works" element={<Features />} />
