@@ -6,7 +6,7 @@ import classes from "./Home.module.css";
 import { MdArrowForwardIos } from "react-icons/md";
 import { FaUserCircle } from "react-icons/fa";
 import TagSearch from "../../components/TaggedQuestions/TaggedQuestions";
-
+import { MdOutlineArrowDropDown } from "react-icons/md";
 function Home() {
   const { user } = useContext(AppState);
   const [questions, setQuestions] = useState([]);
@@ -65,22 +65,25 @@ function Home() {
       </form>
       <div className={classes.sortContainer}>
         <label htmlFor="sort-select">Sort results by: </label>
-        <select
-          id="sort-select"
-          value={sortMethod}
-          onChange={handleSortChange}
-          className={classes.sortSelect}
-        >
-          <option value="id">Most Recent</option>
-          <option value="title">Title (A-Z)</option>
-        </select>
+        <div className={classes.sortWrapper}>
+          <select
+            id="sort-select"
+            value={sortMethod}
+            onChange={handleSortChange}
+            className={classes.sortSelect}
+          >
+            <option value="id">Most Recent</option>
+            <option value="title">Title (A-Z)</option>
+          </select>
+          < MdOutlineArrowDropDown className={classes.dropDownIcon} />
+        </div>
       </div>
       <div className={classes.userQuestions}>
         {loading && <p>Loading questions...</p>}
         {error && <p style={{ color: "red" }}>{error}</p>}
         {sortedQuestions.map((question) => (
           <div key={question.questionid} className={classes.questionItem}>
-            <div>
+            <div className={classes.userInfo}>
               <FaUserCircle size={60} />
               <p>{question.username}</p>
             </div>
@@ -91,7 +94,7 @@ function Home() {
               <p style={{ textAlign: "left", width: "100%" }}>
                 {question.title}
               </p>
-              <MdArrowForwardIos size={40} color="#000" />
+              <MdArrowForwardIos size={40} color="#000" />  
             </Link>
           </div>
         ))}

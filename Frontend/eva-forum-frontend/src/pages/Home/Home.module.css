@@ -98,15 +98,33 @@ a:hover{
 }
 
 .sortSelect {
-  margin-left: 0.5rem;
-  padding: 0.25rem;
+  /* margin-left: 0.5rem; */
+  /* padding: 0.25rem; */
   width: 100%;
 }
-
+.sortWrapper{
+  display: flex;
+  align-items: center;
+}
+.dropDownIcon{
+  margin-left: -2rem;
+  pointer-events: none;
+  font-size: 25px;
+}
 .sortContainer select{
-    width: 100%;
-    border: 1px solid #ccc;
-    border-radius: 25px;
-    padding: 10px 20px;
-
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  padding: 10px 20px;
+  appearance: none;
+  transition: border 0.5s;
+}
+.sortContainer select:focus{
+  border: 1px solid #f39c12;
+  outline: none;
+}
+.userInfo{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
