@@ -9,7 +9,7 @@ import QuestionForm from "./pages/Question/QuestionForm";
 import Features from "./components/Features/Features";
 import Footer from "./components/Footer/Footer";
 import axios from "./axiosConfig";
-import AuthContainer from "./pages/authContainer/authContainer";
+import AuthContainer from "./pages/authContainer/AuthContainer";
 
 // creating a context for managing user state across the app
 export const AppState = React.createContext();
